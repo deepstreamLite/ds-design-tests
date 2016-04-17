@@ -1,136 +1,111 @@
-function DsLogo( snapCanvas ) {
+function DsLogo( snapCanvas, settings ) {
 	this._snapCanvas = snapCanvas;
-	this._settings = {
-		radius: 150,
-		ballRadius: 15,
-		angleOffset: 0.3,
-		cX: 200,
-		cY: 200
-	};
+	this._settings = this._extendSettings( settings );
+	this._path = new SvgPathString( this._settings.ballRadius );
 	this._drawD();
 	this._drawS();
-
-	//this._points = this._calculatePoints();
-	//this._draw();
 }
 
+DsLogo.prototype._extendSettings = function( settings ) {
+	var defaultSettings = {
+		radius: 150,
+		ballRadius: 18,
+		angleOffset: 0.5,
+		cX: 200,
+		cY: 200,
+		attrD: {
+			stroke: 'rgba(255,255,255,0.8)',
+			fill: 'rgba(255,255,255,0.4)',
+			fillRule: 'evenodd',
+			strokeWidth: 2
+		},
+		attrS: {
+			fill: 'none',
+			stroke: '#F0F',
+			strokeWidth: 2
+		}
+	};
+
+	for( var key in settings ) {
+		defaultSettings[ key ] = settings[ key ];
+	}
+
+	return defaultSettings;
+};
 
 DsLogo.prototype._drawS = function() {
 	var c = this._getCoords( this._settings.angleOffset );
-	var pathString = '';
+	var coords = this._circleToLineCoords( c[ 3 ].cb, c[ 1 ].ca, this._settings.angleOffset );
 
-	pathString += 'M' + c[ 3 ].a.x + ',' + c[ 3 ].a.y;
-	pathString += 'L' + c[ 3 ].b.x + ',' + c[ 3 ].b.y;
-	pathString += 'L' + c[ 1 ].ca.x + ',' + c[ 1 ].ca.y;
+	this._snapCanvas.circle( c[ 3 ].cb.x, c[ 3 ].cb.y, this._settings.ballRadius );
 
-	this._snapCanvas.circle( c[ 3 ].cb.x, c[ 3 ].cb.y, 15 );
+	this._path.new().m( c[ 3 ].a ).l( c[ 3 ].b );
+	this._path.a( this._settings.angleOffset, coords.a ).l( coords.b );
 
-	this._snapCanvas.path( pathString ).attr({
-		fill: 'none',
-		stroke: '#F0F',
-		strokeWidth: 2
-	});
+	this._snapCanvas.path( this._path.get() ).attr( this._settings.attrS );
 };
 
+DsLogo.prototype._createPathStringForD = function( oa ) {
+	var i;
+	var c = this._getCoords( oa ).slice(0, 3);
 
-DsLogo.prototype._createPathStringForD = function( oA ) {
-	var r = this._settings.ballRadius;
-	var coords = this._getCoords( oA ).slice(0, 3);
+	c.push( this._circleToLineCoords( c[ 2 ].cb, c[ 0 ].ca, oa ) );
 
-	var caX = this._settings.cX + Math.sin( Math.PI ) * this._settings.radius;
-	var caY = this._settings.cY + Math.cos( Math.PI ) * this._settings.radius;
-
-	var paX = caX + r * Math.cos( ( Math.PI * 0.5 ) + oA );
-	var paY = caY + r * Math.sin( ( Math.PI * 0.5 ) + oA );
-
-	var cbX = this._settings.cX + 0 * this._settings.radius;
-	var cbY = this._settings.cY + 1 * this._settings.radius;
-
-	var pbX = cbX + r * Math.cos( Math.PI * -0.5 - oA );
-	var pbY = cbY + r * Math.sin( Math.PI * -0.5 - oA );
-
-	coords.push({
-		a: { x: paX, y: paY },
-		b: { x: pbX, y: pbY }
-	});
-
-	var pathString = '';
-	var i, a, b;
-
-
-	for( i = 0; i < coords.length; i++ ) {
-		a = coords[ i ].a;
-		b = coords[ i ].b;
-
+	for( i = 0; i < c.length; i++ ) {
 		if( i === 0 ) {
-			pathString += 'M' + a.x + ',' + a.y;
+			this._path.m( c[ i ].a );
 		} else {
-			pathString += 'A' + r + ' ' + r + ' 0 ' + ( oA < 0 ? '0 1' : '1 0' ) + ' ' + a.x + ' ' + a.y;
+			this._path.a( oa, c[ i ].a );
 		}
 
-		pathString += 'L' + b.x + ',' + b.y;
+		this._path.l( c[ i ].b );
 	}
 
-	pathString += 'A' + r + ' ' + r + ' 0 ' + ( oA < 0 ? '0 1' : '1 0' ) + ' ' + coords[ 0 ].a.x + ' ' + coords[ 0 ].a.y;
-
-	return pathString;
+	this._path.a( oa, c[ 0 ].a );
 };
 
 DsLogo.prototype._drawD = function() {
-	var pathString = this._createPathStringForD( this._settings.angleOffset );
-	pathString += this._createPathStringForD( this._settings.angleOffset * -1 );
-
-	this._snapCanvas.path( pathString ).attr({
-		'stroke': 'rgba(255,255,255,0.8)',
-		'fill': 'rgba(255,255,255,0.4)',
-		'fillRule': 'evenodd',
-		'strokeWidth': 2
-	});
+	this._path.new();
+	this._createPathStringForD( this._settings.angleOffset );
+	this._createPathStringForD( this._settings.angleOffset * -1 );
+	this._snapCanvas.path( this._path.get() ).attr( this._settings.attrD );
 };
 
-DsLogo.prototype._getCoords = function( oA ) {
-	var i, a, caX, caY,
-		paX, paY, cbX, cbY, pbX, pbY,
-		thetaA,  thetaB;
+DsLogo.prototype._circleToLineCoords = function( ca, cb, oa ) {
+	var r = this._settings.ballRadius;
+	var thetaA = Math.atan2( cb.y - ca.y, cb.x - ca.x ) + oa;
+	var thetaB = Math.atan2( ca.y - cb.y, ca.x - cb.x ) + oa * -1;
 
+	return {
+		a: { x: ca.x + r * Math.cos( thetaA ), y: ca.y + r * Math.sin( thetaA ) },
+		b: { x: cb.x + r * Math.cos( thetaB ), y: cb.y + r * Math.sin( thetaB ) },
+		ca: { x: ca.x, y: ca.y },
+		cb: { x: cb.x, y: cb.y }
+	};
+};
+
+DsLogo.prototype._getCoords = function( oa ) {
+
+	var i, a, ca, cb;
 	var r = this._settings.radius;
-	var circleR = this._settings.ballRadius;
 	var cX = this._settings.cX;
 	var cY = this._settings.cY;
-
-	var sin = Math.sin;
-	var cos = Math.cos;
-	var atan2 = Math.atan2;
-	var PI = Math.PI;
-
 	var coords = [];
 
 	for( i = 0; i < 6; i++ ) {
+		a = i * Math.PI / 3;
 
-		a = i * PI / 3;
+		ca = {
+			x: cX + Math.sin( a ) * r,
+			y: cY + Math.cos( a ) * r
+		};
 
-		caX = cX + sin( a ) * r;
-		caY = cY + cos( a ) * r;
+		cb = {
+			x: cX + Math.sin( a + ( Math.PI / 3 ) ) * r,
+			y: cY + Math.cos( a + ( Math.PI / 3 ) ) * r
+		};
 
-		cbX = cX + sin( a + ( PI / 3 ) ) * r;
-		cbY = cY + cos( a + ( PI / 3 ) ) * r;
-
-		thetaA = atan2( cbY - caY, cbX - caX ) + oA;
-
-		paX = caX + circleR * cos( thetaA );
-		paY = caY + circleR * sin( thetaA );
-
-		thetaB = atan2( caY - cbY, caX - cbX ) + oA * -1;
-
-		pbX = cbX + circleR * cos( thetaB );
-		pbY = cbY + circleR * sin( thetaB );
-
-		coords.push({
-			a: { x: paX, y: paY },
-			b: { x: pbX, y: pbY },
-			ca: { x: caX, y: caY },
-			cb: { x: cbX, y: cbY }
-		});
+		coords.push( this._circleToLineCoords( ca, cb, oa ) );
 	}
 
 	return coords;
