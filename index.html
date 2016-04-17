@@ -11,32 +11,79 @@
 	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 	-->
 	<link rel="stylesheet" type="text/css" href="css/screen.css" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 	<!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>-->
-	
-</head>
-<body>
-	<header>
-		<div class="wrapper">
-			<img src="img/logo.svg" width="250" height="250" />
-			<div class="snap-canvas"></div>
-			<nav>
-				<a href="#">Home</a>
-				<a href="#">Downloads</a>
-				<a href="#">Tutorials</a>
-				<a href="#">Documentation</a>
-				<a href="#">Blog</a>
-				<a href="#">Info</a>
-			</nav>
-			<div class="headline">
-				<h1>deepstream<span>.io</span></h1>
-				<h2>un serveur en temps réel extraordinaire</h2>
-			</div>
-		</div>
-	</header>
-	
 	<script type="text/javascript" src="js/snap.js"></script>
 	<script type="text/javascript" src="js/svg-path-string.js"></script>
 	<script type="text/javascript" src="js/ds-logo.js"></script>
-	<script type="text/javascript" src="js/start.js"></script>
+</head>
+<body>
+	<section id="blue-simple">
+		<div class="headline">
+			<div class="logo"></div>
+			<h1>deepstream<span>.io</span></h1>
+			<h2>un serveur en temps réel extraordinaire</h2>
+		</div>
+		<style type="text/css">
+		#blue-simple{
+			background-color: #356bc5;
+		}
+
+		#blue-simple .logo{
+			background-image: url("img/deepstream-logo-transparent.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+		</style>
+	</section>
+
+
+	<section id="bright">
+		<div class="headline">
+			<div class="logo snap-canvas-bright"></div>
+			<h1>deepstream<span>.io</span></h1>
+			<h2>un serveur en temps réel extraordinaire</h2>
+		</div>
+		<style type="text/css">
+		#bright .headline *{
+			font-family: Roboto, sans-serif;
+			font-weight: 100;
+		}
+		#bright .headline *{
+			color: #333;
+		}
+
+		#bright .headline span{
+			color: #0FBBEC;
+		}
+		</style>
+		<script type="text/javascript">
+			new DsLogo( '.snap-canvas-bright', {
+				radius: 88,
+				ballRadius: 12,
+				angleOffset: 0.5,
+				cX: 100,
+				cY: 102,
+				attrD: {
+				//	stroke: 'rgba(255,255,255,0.8)',
+				//	fill: 'rgba(255,255,255,0.4)',
+					stroke: "gradient:l(0, 0, 1, 1)#61D9FB-#39CDF7",
+					fill: '#fff',
+					fillRule: 'evenodd',
+					strokeWidth: 2
+				},
+				attrS: {
+					stroke: 'gradient:l(0, 0, 1, 1)#8CE3FC-#0FBBEC',
+				//	fill: 'rgba(255,255,255,0.3)',
+					fill: 'none',
+					fillRule: 'evenodd',
+					strokeWidth: 2,
+					'stroke-alignment': 'inner'
+				}
+			});
+		</script>
+	</section>
+
 </body>
 </html>

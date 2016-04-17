@@ -1,14 +1,20 @@
-function DsLogo( snapCanvas, settings ) {
-	this._snapCanvas = snapCanvas;
+function DsLogo( selector, settings ) {
 	this._settings = this._extendSettings( settings );
+	this._dimensions = 10 + this._settings.radius * 2 + this._settings.ballRadius * 2;
+	this._snapCanvas = Snap( this._dimensions, this._dimensions ).appendTo( Snap( selector ) );
+	this._settings.attrD.stroke = this._processColor( this._settings.attrD.stroke );
+	this._settings.attrD.fill = this._processColor( this._settings.attrD.fill );
+	this._settings.attrS.stroke = this._processColor( this._settings.attrS.stroke );
+	this._settings.attrS.fill = this._processColor( this._settings.attrS.fill );
 	this._cO = this._getCoords( this._settings.angleOffset );
 	this._cI = this._getCoords( this._settings.angleOffset * -1 );
 	this._path = new SvgPathString( this._settings.ballRadius );
-	this._drawD();
 	this._drawS();
+	this._drawD();
 }
 
 DsLogo.prototype._extendSettings = function( settings ) {
+
 	var defaultSettings = {
 		radius: 150,
 		ballRadius: 18,
@@ -16,16 +22,19 @@ DsLogo.prototype._extendSettings = function( settings ) {
 		cX: 200,
 		cY: 200,
 		attrD: {
-			stroke: 'rgba(255,255,255,0.8)',
-			fill: 'rgba(255,255,255,0.4)',
+		//	stroke: 'rgba(255,255,255,0.8)',
+		//	fill: 'rgba(255,255,255,0.4)',
+			stroke: 'red',
+			fill: 'none',
 			fillRule: 'evenodd',
 			strokeWidth: 2
 		},
 		attrS: {
-			stroke: 'rgba(255,0,255,0.5)',
-			fill: 'rgba(255,255,255,0.3)',
+			stroke: 'blue',
+		//	fill: 'rgba(255,255,255,0.3)',
+			fill: 'none',
 			fillRule: 'evenodd',
-			strokeWidth: 4,
+			strokeWidth: 2,
 			'stroke-alignment': 'inner'
 		}
 	};
@@ -35,6 +44,14 @@ DsLogo.prototype._extendSettings = function( settings ) {
 	}
 
 	return defaultSettings;
+};
+
+DsLogo.prototype._processColor = function( color ) {console.log( color );
+	if( color.indexOf( 'gradient:' ) === -1 ) {
+		return color;
+	} else {
+		return this._snapCanvas.gradient( color.replace( 'gradient:', '' ) );
+	}
 };
 
 DsLogo.prototype._calculateCornerCoords = function() {
@@ -73,7 +90,8 @@ DsLogo.prototype._drawS = function() {
 	this._path.l( this._cornerCoords );
 
 	//draw
-	this._snapCanvas.path( this._path.get() ).attr( this._settings.attrS );
+	window.s = this._snapCanvas.path( this._path.get() );
+	s.attr( this._settings.attrS );
 };
 
 DsLogo.prototype._createPathStringForD = function( oa ) {
