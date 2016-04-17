@@ -23,7 +23,17 @@ SvgPathString.prototype.l = function( target ) {
 };
 
 SvgPathString.prototype.a = function( oA, target ) {
-	this._pathString += 'A' + this._r + ' ' + this._r + ' 0 ' + ( oA < 0 ? '0 1' : '1 0' );
+	this._pathString += 'A' + this._r + ' ' + this._r + ' 0 ';
+	if( typeof oA === 'string' ) {
+		this._pathString += oA;
+	} else {
+		this._pathString += oA < 0 ? '0 1' : '1 0';
+	}
 	this._pathString += ' ' + target.x + ' ' + target.y;
+	return this;
+};
+
+SvgPathString.prototype.close = function() {
+	this._pathString += 'Z';
 	return this;
 };
