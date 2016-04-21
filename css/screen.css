@@ -103,6 +103,10 @@ header .headline .buttons a{
 	color: #999;
 }
 
+#quick-links a i{
+	color: #999;
+}
+
 #code-samples{
 	// background-color: #ebfbff;
 	height: 400px;
