@@ -10,8 +10,20 @@
 	position: relative;
 }
 
-header{
-	background-color: #356bc5;
+.centered{
+	text-align: center;
+}
+/**************************
+* Navigation
+**************************/
+*{
+	font-family: Roboto, sans-serif;
+	font-weight: 200;
+	color: #333;
+}
+
+a{
+	text-decoration: none;
 }
 
 nav{
@@ -19,44 +31,79 @@ nav{
 }
 
 nav a{
+	padding: 15px 0;
+	margin: 0 30px;
+	text-align: center;
+	font-family: Roboto, sans-serif;
+	color: #333;
 	display: block;
 	float: left;
-	padding: 5px 20px;
-	color: #fff;
-	text-decoration: none;
-	text-align: left;
-	font-family: Roboto, sans-serif;
-	font-weight: 100;
 	cursor: pointer;
+	font-weight: 300;
+	text-transform: lowercase;
+	transition: color 300ms ease;
 }
 
-.logo{
-    width: 200px;
-    height: 200px;
-    float: left;
-    margin-top: -42px;
-    margin-right: 20px;
+nav a:hover{
+	color: #0FBBEC;
 }
 
-.headline{
-	padding: 130px 0;
-	margin: 0 auto;
-    width: 700px;
+nav a.active{
+	border-top: 4px solid #0FBBEC;
+	padding-top: 11px;
+	color: #0FBBEC;
 }
 
-.headline *{
-	font-family: Muli, sans-serif;
-	font-weight: bold;
-	color: #fff;
+/**************************
+* Header
+**************************/
+header{
+	margin: 140px 0 160px;
 }
 
-.headline h1{
-    font-size: 60px;
-    padding: 0;
-    margin: 0;
-    line-height: 70px;
+header .headline{
+	overflow: hidden;
 }
 
-.headline h1 span{
-	opacity: 0.6;
+header .headline .logo{
+	width: 214px;
+	height: 214px;
+	float: left;
+	margin: 0 20px 0 280px;
+}
+
+header .headline h1{
+    padding-top: 50px;
+    font-size: 50px;
+}
+
+header .headline span{
+	color: #0FBBEC;
+}
+
+header .headline .buttons a{
+	display: inline-block;
+    // border: 1px solid #dadada;
+    background-color: #f9f9f9;
+    padding: 7px 50px;
+    text-align: center;
+    border-radius: 3px;
+    margin: 20px 10px 0 0;
+}
+
+.ion-adjust{
+	margin-right: 7px;
+    position: relative;
+    top: 1px;
+}
+
+#quick-links a{
+	display: inline-block;
+	padding: 5px 50px;
+	color: #999;
+}
+
+#code-samples{
+	// background-color: #ebfbff;
+	height: 400px;
 }
