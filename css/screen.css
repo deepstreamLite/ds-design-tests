@@ -158,7 +158,12 @@ header .quick-links a{
 	display: inline-block;
 	padding: 5px 50px;
 	color: #999;
+	cursor: pointer;
 	font-size: 12px;
+}
+
+header .quick-links a:hover{
+	text-decoration: underline;
 }
 
 header .quick-links a i{
@@ -173,4 +178,77 @@ header .quick-links a i{
 #code-samples{
 	background: url("../img/bg-dark-triangle.png" );
 	height: 600px;
+	position: relative;
+}
+
+.tabbox{
+	width: 350px;
+	position: absolute;
+}
+
+.tabbox .tabs{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    top: 1px;
+}
+
+.tabbox .tabs > div{
+	padding: 3px 10px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    float: left;
+    color: #ccc;
+    border-radius: 3px 3px 0 0;
+    background: #333;
+    font-size: 12px;
+    margin-right: 3px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.tabbox .tabs > div:hover{
+	color: #fff;
+	border-color: #fff;
+}
+
+.tabbox .tabs > div.active{
+	border-color: #0FBBEC;
+	color: #0FBBEC;
+	border-bottom: 1px solid #333;
+}
+
+.tabbox .box{
+	border: 1px solid #0FBBEC;
+	padding: 5px;
+	background: #333;
+	box-shadow: inset -2px -2px 8px -2px rgba(0,0,0,0.8);
+}
+
+.tabbox .box > div{
+	display: none;
+}
+
+.tabbox .box > div.active{
+	display: block;
+}
+
+.tabbox.client-a{
+	left: 50px;
+	top: 50px;
+}
+
+.tabbox code, .tabbox code *{
+	color: #eee;
+	font-size: 12px;
+	line-height: 20px;
+	font-family: 'courier new', monospace;
+}
+
+.tabbox code i{
+	font-style: normal;
+}
+
+.tabbox code i.string{
+	color: #ccc;
 }

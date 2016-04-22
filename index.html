@@ -52,21 +52,40 @@
 		<div class="quick-links wrapper">
 			<a href="#">
 				<i class="ion-social-twitter"></i>
-				twitter
+				@deepstreamIO on twitter
 			</a>
 			<a href="#">
 				<i class="ion-social-octocat"></i>
-				github
+				2.2k stars on github
 			</a>
 			<a href="#">
 				<i class="ion-social-buffer"></i>
-				stackoverflow
+				#deepstream.io on stackoverflow
 			</a>
 		</div>
 	</header>
 
 	<section id="code-samples">
-
+		<div class="tabbox client-a">
+			<div class="tabs">
+				<div class="active">record</div>
+				<div>event</div>
+				<div>rpc</div>
+			</div>
+			<div class="box">
+				<div class="active">
+					<code>
+<pre>
+ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
+john = ds.record.getRecord( <i class="string">'user/johnsmith'</i> );
+john.set( <i class="string">'geo.latitude'</i>, 52.5200 );
+</pre>
+					</code>
+				</div>
+				<div>event</div>
+				<div>rpc</div>
+			</div>
+		</div>
 	</section>
 </body>
 </html>
