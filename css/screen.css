@@ -1,7 +1,17 @@
+/**************************
+* Generell
+**************************/
 *{
+	font-family: Roboto, sans-serif;
+	font-weight: 200;
+	color: #333;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
 }
 
 .wrapper{
@@ -13,34 +23,64 @@
 .centered{
 	text-align: center;
 }
+
+.ion-adjust{
+	margin-right: 7px;
+    position: relative;
+    top: 1px;
+}
+
 /**************************
 * Navigation
 **************************/
-*{
-	font-family: Roboto, sans-serif;
-	font-weight: 200;
-	color: #333;
-}
-
-a{
-	text-decoration: none;
-}
-
 nav{
 	overflow: hidden;
+	background: #333;
+	background: url("../img/bg-dark-triangle.png" );
 }
 
-nav a{
-	padding: 15px 0;
+nav .logo{
+	float: left;
+	display: block;
+}
+
+nav .logo span{
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+nav .logo span em{
+	color: #0FBBEC;
+	font-style: normal;
+	font-weight: 300;
+}
+
+nav .logo .container{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+nav .pages{
+	float: right;
+}
+
+nav .pages a{
+	padding: 16px 0 15px;
 	margin: 0 30px;
 	text-align: center;
 	font-family: Roboto, sans-serif;
-	color: #333;
+	font-size: 13px;
+	color: #FFF;
 	display: block;
 	float: left;
 	cursor: pointer;
 	font-weight: 300;
-	text-transform: lowercase;
 	transition: color 300ms ease;
 }
 
@@ -50,7 +90,7 @@ nav a:hover{
 
 nav a.active{
 	border-top: 4px solid #0FBBEC;
-	padding-top: 11px;
+	padding-top: 12px;
 	color: #0FBBEC;
 }
 
@@ -58,18 +98,27 @@ nav a.active{
 * Header
 **************************/
 header{
-	margin: 140px 0 160px;
+    text-align: center;
+}
+
+header .video{
+	background-image: url(../img/video-placeholder.png);
+	width: 1200px;
+	height: 521px;
+	position: absolute;
+	z-index: 0;
+	left: 50%;
+	margin-left: -600px;
+}
+
+header .headline,
+header .quick-links{
+	position: relative;
+	z-index: 1;
 }
 
 header .headline{
-	overflow: hidden;
-}
-
-header .headline .logo{
-	width: 214px;
-	height: 214px;
-	float: left;
-	margin: 0 20px 0 280px;
+	padding: 140px 0;
 }
 
 header .headline h1{
@@ -81,33 +130,47 @@ header .headline span{
 	color: #0FBBEC;
 }
 
-header .headline .buttons a{
+header .headline a{
 	display: inline-block;
-    // border: 1px solid #dadada;
-    background-color: #f9f9f9;
-    padding: 7px 50px;
+    transition: all 300ms ease;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.4);
+    padding: 9px 51px;
     text-align: center;
     border-radius: 3px;
-    margin: 20px 10px 0 0;
+    margin-top: 40px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-.ion-adjust{
-	margin-right: 7px;
-    position: relative;
-    top: 1px;
+header .headline a:hover{
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.3);
 }
 
-#quick-links a{
+header .headline a:active{
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+}
+
+header .quick-links{
+	background: rgba(255,255,255,0.5);
+}
+
+header .quick-links a{
 	display: inline-block;
 	padding: 5px 50px;
 	color: #999;
+	font-size: 12px;
 }
 
-#quick-links a i{
-	color: #999;
+header .quick-links a i{
+	color: #aaa;
+	position: relative;
+	top: 1px;
 }
 
+/**************************
+* Code Samples
+**************************/
 #code-samples{
-	// background-color: #ebfbff;
-	height: 400px;
+	background: url("../img/bg-dark-triangle.png" );
+	height: 600px;
 }
