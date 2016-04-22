@@ -2,13 +2,13 @@ function DsLogo( selector, settings ) {
 	this._settings = this._extendSettings( settings );
 	this._dimensions = 10 + this._settings.radius * 2 + this._settings.ballRadius * 2;
 	this._snapCanvas = Snap( this._dimensions, this._dimensions ).appendTo( Snap( selector ) );
-	this._settings.attrD.stroke = this._processColor( this._settings.attrD.stroke );
-	this._settings.attrD.fill = this._processColor( this._settings.attrD.fill );
-	this._settings.attrS.stroke = this._processColor( this._settings.attrS.stroke );
-	this._settings.attrS.fill = this._processColor( this._settings.attrS.fill );
+	this._processAttr( this._settings.attrD );
+	this._processAttr( this._settings.attrS );
 	this._cO = this._getCoords( this._settings.angleOffset );
 	this._cI = this._getCoords( this._settings.angleOffset * -1 );
 	this._path = new SvgPathString( this._settings.ballRadius );
+	this._s = null;
+	this._d = null;
 	this._drawS();
 	this._drawD();
 }
@@ -46,7 +46,23 @@ DsLogo.prototype._extendSettings = function( settings ) {
 	return defaultSettings;
 };
 
-DsLogo.prototype._processColor = function( color ) {console.log( color );
+DsLogo.prototype.animate = function( attrD, attrS, duration ) {
+	this._s.animate( this._processAttr( attrS ), duration );
+	this._d.animate( this._processAttr( attrD ), duration );
+};
+
+DsLogo.prototype._processAttr = function( attr ) {
+	if( attr.fill ) {
+		attr.fill = this._processColor( attr.fill );
+	}
+	if( attr.stroke ) {
+		attr.stroke = this._processColor( attr.stroke );
+	}
+
+	return attr;
+};
+
+DsLogo.prototype._processColor = function( color ) {
 	if( color.indexOf( 'gradient:' ) === -1 ) {
 		return color;
 	} else {
@@ -90,8 +106,8 @@ DsLogo.prototype._drawS = function() {
 	this._path.l( this._cornerCoords );
 
 	//draw
-	window.s = this._snapCanvas.path( this._path.get() );
-	s.attr( this._settings.attrS );
+	this._s = this._snapCanvas.path( this._path.get() );
+	this._s.attr( this._settings.attrS );
 };
 
 DsLogo.prototype._createPathStringForD = function( oa ) {
@@ -117,7 +133,8 @@ DsLogo.prototype._drawD = function() {
 	this._path.new();
 	this._createPathStringForD( this._settings.angleOffset );
 	this._createPathStringForD( this._settings.angleOffset * -1 );
-	this._snapCanvas.path( this._path.get() ).attr( this._settings.attrD );
+	this._d = this._snapCanvas.path( this._path.get() );
+	this._d.attr( this._settings.attrD );
 };
 
 DsLogo.prototype._circleToLineCoords = function( ca, cb, oa ) {
