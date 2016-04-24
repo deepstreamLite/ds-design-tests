@@ -36,7 +36,7 @@ a{
 nav{
 	overflow: hidden;
 	background: #333;
-	background: url("../img/bg-dark-triangle.png" );
+	//background: url("../img/bg-dark-triangle.png" );
 }
 
 nav .logo{
@@ -99,6 +99,7 @@ nav a.active{
 **************************/
 header{
     text-align: center;
+    padding-top: 50px;
 }
 
 header .video{
@@ -173,12 +174,15 @@ header .quick-links a i{
 	top: 1px;
 }
 
+
 /**************************
-* Code Samples
+* Concept Select
 **************************/
 #concepts{
-	background-color: #fff;
-	//background: url("../img/bg-bright-triangle.png" );
+	// background-color: #fff;
+
+	//background: #22C9F1 url(https://deepstream.io/assets/images/decrtn-SecrPath.svg) no-repeat bottom right;
+	background-color: #333;
     height: 600px;
     border-top: 1px solid #ddd;
     box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
@@ -186,67 +190,10 @@ header .quick-links a i{
     z-index: 1;
 }
 
-#code-samples{
-	position: relative;
-}
-
-#code-samples .ds-logo{
-	position: absolute;
-	width: 220px;
-	height: 220px;
-	top: 80px;
-	left: 50%;
-	margin-left: -110px;
-}
-
-#code-samples .client-a{
-    left: 50%;
-    margin-left: -550px;
-    top: 20px;
-}
-
-#code-samples .client-b{
-    left: 50%;
-    margin-left: -550px;
-    top: 180px;
-}
-
-#code-samples .client-c{
-    left: 50%;
-    margin-left: 300px;
-    top: 20px;
-}
-
-#code-samples .client-d{
-    left: 50%;
-    margin-left: 300px;
-    top: 180px;
-}
-
-#logoD{
-	animation-duration: 1s;
-	animation-name: changeColor;
-	animation-easing: ease;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-
-@keyframes changeColor {
-  from {
-    stroke: #61d9fb;
-  }
-
-  to {
-   stroke: #00C4FA;
-  }
-}
-
-/**************************
-* Concept Select
-**************************/
 #concept-select{
-	background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_dots.png");
-	border-bottom: 1px solid #eee;
+	background-color: #222;
+	// background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_dots.png");
+	//border-bottom: 1px solid #eee;
 }
 
 #concept-select ul{
@@ -259,20 +206,35 @@ header .quick-links a i{
     float: left;
     width: 300px;
     padding: 40px 50px;
+    cursor: pointer;
+}
+
+#concept-select li,
+#concept-select li *{
+	transition: all 500ms ease;
+}
+
+#concept-select li:hover{
+	background-color: #333;
+}
+
+#concept-select li:hover *{
+	color: #fff;
 }
 
 #concept-select li.active{
-	background-color: #fff;
+	// background-color: #fff;
+	background: #333;
 	padding: 40px 48px;
-	border-bottom: 1px solid #fff;
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
+	// border-bottom: 1px solid #fff;
+	// border-left: 1px solid #eee;
+	// border-right: 1px solid #eee;
 }
 
 #concept-select li .icon{
 	float: left;
     font-size: 20px;
-    color: #444;
+    color: #eee;
     position: relative;
     left: 20px;
 }
@@ -281,10 +243,11 @@ header .quick-links a i{
 #concept-select li.active h2{
 	color: #0FBBEC;
 }
+
 #concept-select li h2{
     font-size: 18px;
     margin-bottom: 8px;
-    color: #444;
+    color: #eee;
     margin-left: 50px;
     font-weight: 300;
 }
@@ -292,64 +255,147 @@ header .quick-links a i{
 #concept-select li p{
 	font-weight: 300;
 	font-size: 14px;
-	color: #333;
+	color: #eee;
 	margin-left: 50px;
 }
 
 /**************************
 * Code Samples
 **************************/
-.sample{
-	width: 350px;
+#code-samples{
+	position: relative;
+}
+
+#code-samples .sample{
 	position: absolute;
+	overflow: hidden;
 }
 
-.sample .brace{
-    font-size: 70px;
-    position: absolute;
-    top: 10px;
-    font-weight: 100;
-    color: #ddd;
+#code-samples .sample > *{
+	display: block;
+	float: left;
 }
 
-.sample.left .brace{
-	right: -31px;
-}
-
-.sample.right .brace{
-	left: -31px;
-}
-
-.sample .icon {
+#code-samples .sample .icon{
     font-size: 50px;
-    position: absolute;
-    color: #ccc;
-    top: -11px;
+    color: #0FBBEC;
+    width: 80px;
+    text-align: center;
 }
 
-.sample.left .icon {
-    left: -50px;
-}
-
-.sample.right .icon {
-    right: -50px;
-}
-
-.sample code{
+#code-samples .sample code{
 	white-space: pre-line;
+	width: 364px;
 }
 
-.sample code, .sample code *{
-	color: #555;
+#code-samples .sample code .highlight{
+	color: #0FBBEC;
+}
+
+#code-samples .sample.right code{
+	position: relative;
+	left: 25px;
+}
+
+#code-samples .sample code, .sample code *{
+	color: #eee;
 	font-size: 12px;
 	line-height: 20px;
 	font-family: 'courier new', monospace;
 }
 
-.sample code i{
+#code-samples .sample code i{
 	font-style: normal;
 }
 
-.sample code i.string{
+#code-samples .sample code i.string{
 	color: #999;
+}
+
+/* structure */
+#code-samples .sample.left{
+    left: 0;
+}
+
+#code-samples .sample.right{
+	right: 0;
+}
+
+#code-samples .sample.top{
+    top: 80px;
+}
+
+#code-samples .sample.bottom{
+    top: 280px;
+}
+
+/* logo */
+@keyframes changeColor {
+  from {
+    stroke: #61d9fb;
+  }
+
+  to {
+   stroke: #00C4FA;
+  }
+}
+
+#code-samples .ds-logo{
+	position: absolute;
+	width: 220px;
+	height: 220px;
+	top: 100px;
+	left: 50%;
+	margin-left: -110px;
+	animation-duration: 1s;
+	animation-name: changeColor;
+	animation-easing: ease;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#code-samples .svg-canvas{
+    position: absolute;
+    left: 50%;
+    top: 62px;
+    margin-left: -250px;
+    width: 500px;
+    height: 300px;
+}
+
+/**************************
+* Getting started
+**************************/
+#getting-started{
+	background: url("../img/nightsky.png" );
+	height: 400px;
+	position: relative;
+}
+
+#getting-started *{
+	color: #eee;
+}
+
+#getting-started h2{
+	font-size: 40px;
+	padding: 40px 0;
+	text-align: center;
+}
+
+#getting-started .box{
+	padding: 10px;
+	border: 1px solid rgba(255,255,255,0.6);
+	position: relative;
+}
+
+#getting-started .box.half{
+	width: 46%;
+	margin: 2%;
+}
+
+#getting-started .box .icon{
+	height: 100%;
+	float: left;
+	width: 20%;
+	font-size: 30px;
 }

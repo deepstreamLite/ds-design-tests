@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="js/snap.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/svg-path-string.js"></script>
+	<script type="text/javascript" src="js/code-sample-animation.js"></script>
 	<script type="text/javascript" src="js/ds-logo.js"></script>
 	<script type="text/javascript" src="js/start.js"></script>
 </head>
@@ -113,47 +114,42 @@
 			</ul>
 		</div>
 
-		<div id="code-samples">
+		<div id="code-samples" class="wrapper">
+
+			<!-- svg canvas -->
+			<div class="svg-canvas"></div>
 
 			<!-- mobile -->
-			<div class="sample client-a left">
-				<div class="icon ion-iphone"></div>
-				<div class="brace">}</div>
-				<code class="record active">
-					ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
+			<div class="sample client-a left top">
+				<code class="record active">ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
 					john = ds.record.getRecord( <i class="string">'user/johnsmith'</i> );
-					john.set( <i class="string">'geo.latitude'</i>, 52.5200 );
+					john.set( <i class="string">'geo.lat'</i>, <i class="highlight">52.5200</i> );
 				</code>
+				<div class="icon ion-iphone"></div>
 			</div>
 
 			<!-- server -->
-			<div class="sample client-b left">
-				<div class="icon ion-social-buffer-outline"></div>
-				<div class="brace">}</div>
+			<div class="sample client-b left bottom">
 				<code class="record active">
-					ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
-					john = ds.record.getRecord( <i class="string">'user/johnsmith'</i> );
-					john.set( <i class="string">'geo.latitude'</i>, 52.5200 );
+					john.subscribe( 'geo', ( geoCoords ) => {
+					&nbsp;&nbsp;&nbsp;&nbsp;<i class="string">//{ lat: 52.5200, long: 52.5200 }</i>
+					});
 				</code>
+				<div class="icon ion-social-buffer-outline"></div>
 			</div>
 
 			<!-- desktop -->
-			<div class="sample client-c right">
+			<div class="sample client-c right top">
 				<div class="icon ion-ios-monitor-outline"></div>
-				<div class="brace">{</div>
-				<code class="record active">
-					ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
-					john = ds.record.getRecord( <i class="string">'user/johnsmith'</i> );
-					john.set( <i class="string">'geo.latitude'</i>, 52.5200 );
+				<code class="record active">john.get( <i class="string">'lastname'</i> ); //<i class="string">// 'doe'</i>
+					john.get( <i class="string">'basket.items[ 2 ]'</i> ); //<i class="string">// 'stuff'</i>
 				</code>
 			</div>
 
 			<!-- cloud -->
-			<div class="sample client-d right">
+			<div class="sample client-d right bottom">
 				<div class="icon ion-ios-cloud-outline"></div>
-				<div class="brace">{</div>
-				<code class="record active">
-					ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
+				<code class="record active">ds = deepstream( <i class="string">'localhost:6020'</i> ).login();
 					john = ds.record.getRecord( <i class="string">'user/johnsmith'</i> );
 					john.set( <i class="string">'geo.latitude'</i>, 52.5200 );
 				</code>
@@ -177,11 +173,21 @@
 						</linearGradient>
 					</defs>
 					<path id="logoS" d="M103.75644772144172,24.247831719193556A12 12 0 0 1 98.00334125819128 14.283159023490908L33.10511351525221,51.7521682808064A12 12 0 1 0 33.1051135152522 72.24783171919351L172.39695702880363,152.6680150676617M103.75644772144172,24.247831719193556L38.85821997850264,61.71684097650905A12 12 0 0 1 38.85821997850264 62.283159023490875L186.89488648474781,147.75216828080644A12 12 0 0 0 181.1417800214974 158.28315902349092L116.24355227855828,195.75216828080644L116.24355227855828,185.6545164631117L172.39695702880363,152.6680150676617" stroke="url('#gradA')" fill="none" stroke-alignment="inner" style="fill-rule: evenodd; stroke-width: 2;"></path>
-					<path id="logoD" d="M121.99665874180873,205.71684097650908L186.89488648474781,168.24783171919356A12 12 0 1 0 198.89154522655656 147.46900925731552L198.89154522655656,72.5309907426845A12 12 0 1 0 186.89488648474781 51.75216828080646L121.99665874180874,14.283159023490917A12 12 0 1 0 104.24689353674958 24.530990742684473L104.24689353674957,195.46900925731552A12 12 0 1 0 121.99665874180873 205.71684097650908M116.24355227855828,195.75216828080644L181.1417800214974,158.28315902349092A12 12 0 0 1 187.38533230005567 147.46900925731552L187.38533230005567,72.5309907426845A12 12 0 0 1 181.1417800214974 61.716840976509104L116.2435522785583,24.247831719193563A12 12 0 0 1 115.75310646325045 24.530990742684473L115.75310646325043,195.46900925731552A12 12 0 0 1 116.24355227855828 195.75216828080644" stroke="url('#gradB')" fill="#ffffff" style="fill-rule: evenodd; stroke-width: 2;"></path>
+					<path id="logoD" d="M121.99665874180873,205.71684097650908L186.89488648474781,168.24783171919356A12 12 0 1 0 198.89154522655656 147.46900925731552L198.89154522655656,72.5309907426845A12 12 0 1 0 186.89488648474781 51.75216828080646L121.99665874180874,14.283159023490917A12 12 0 1 0 104.24689353674958 24.530990742684473L104.24689353674957,195.46900925731552A12 12 0 1 0 121.99665874180873 205.71684097650908M116.24355227855828,195.75216828080644L181.1417800214974,158.28315902349092A12 12 0 0 1 187.38533230005567 147.46900925731552L187.38533230005567,72.5309907426845A12 12 0 0 1 181.1417800214974 61.716840976509104L116.2435522785583,24.247831719193563A12 12 0 0 1 115.75310646325045 24.530990742684473L115.75310646325043,195.46900925731552A12 12 0 0 1 116.24355227855828 195.75216828080644" stroke="url('#gradB')" fill="#333" style="fill-rule: evenodd; stroke-width: 2;"></path>
 				</svg>
 			</div>
 		</div>
+	</section>
 
+	<section id="getting-started">
+		<div class="wrapper">
+			<h2>Getting Started</h2>
+			<div class="box half">
+				<div class="icon ion-ios-book-outline"></div>
+				<h3>The Guide</h3>
+				<p>The guide takes you step by step through the client and server aspects of developing, running, testing and deploying a realtime todolist app with deepstream.io</p>
+			</div>
+		</div>
 	</section>
 </body>
 </html>

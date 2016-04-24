@@ -1,4 +1,5 @@
 $(function() {
+	new CodeSampleAnimation();
 
 	return;
 	new DsLogo( 'nav .logo .container', {
