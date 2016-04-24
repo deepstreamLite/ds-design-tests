@@ -30,12 +30,16 @@ a{
     top: 1px;
 }
 
+section{
+	position: relative;
+}
 /**************************
 * Navigation
 **************************/
 nav{
 	overflow: hidden;
 	background: #333;
+	background: #fff;
 	//background: url("../img/bg-dark-triangle.png" );
 }
 
@@ -45,7 +49,7 @@ nav .logo{
 }
 
 nav .logo span{
-    color: #fff;
+    color: #333;
     display: inline-block;
     vertical-align: middle;
     font-size: 21px;
@@ -76,7 +80,7 @@ nav .pages a{
 	text-align: center;
 	font-family: Roboto, sans-serif;
 	font-size: 13px;
-	color: #FFF;
+	color: #333;
 	display: block;
 	float: left;
 	cursor: pointer;
@@ -176,24 +180,35 @@ header .quick-links a i{
 
 
 /**************************
-* Concept Select
+* Color Scheme
 **************************/
-#concepts{
-	 background-color: #fff;
-
-	//background: #22C9F1 url(https://deepstream.io/assets/images/decrtn-SecrPath.svg) no-repeat bottom right;
-	//background-color: #333;
-    height: 600px;
-    border-top: 1px solid #ddd;
-    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
+#concept-select li.active,
+#concept-select li:hover,
+#concepts,
+#logoD{
+	background-color: #0FBBEC;
+	fill: #0FBBEC;
 }
 
 #concept-select{
-	//background-color: #222;
-	background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_dots.png");
-	border-bottom: 1px solid #eee;
+	background-color: #46D3FA;
+}
+
+#concept-select li h2,
+#concept-select li p,
+#concept-select li .icon,
+#code-samples .sample code,
+#code-samples .sample code *{
+	color: #fff;
+}
+
+/**************************
+* Concept Select
+**************************/
+#concepts{
+    height: 600px;
+    position: relative;
+    z-index: 1;
 }
 
 #concept-select ul{
@@ -215,39 +230,29 @@ header .quick-links a i{
 }
 
 #concept-select li:hover{
-	background-color: #333;
+
 }
 
 #concept-select li:hover *{
 	color: #fff;
 }
 
-#concept-select li.active{
-	background-color: #fff;
-	//background: #333;
-	padding: 40px 48px;
-	border-bottom: 1px solid #fff;
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
 #concept-select li .icon{
 	float: left;
     font-size: 20px;
-    color: #333;
     position: relative;
     left: 20px;
 }
 
 #concept-select li.active .icon,
 #concept-select li.active h2{
-	color: #0FBBEC;
+	//color: #0FBBEC;
+	color: #fff;
 }
 
 #concept-select li h2{
     font-size: 18px;
     margin-bottom: 8px;
-    color: #333;
     margin-left: 50px;
     font-weight: 300;
 }
@@ -255,7 +260,6 @@ header .quick-links a i{
 #concept-select li p{
 	font-weight: 300;
 	font-size: 14px;
-	color: #333;
 	margin-left: 50px;
 }
 
@@ -278,7 +282,7 @@ header .quick-links a i{
 
 #code-samples .sample .icon{
     font-size: 50px;
-    color: #0FBBEC;
+    color: #fff;
     width: 80px;
     text-align: center;
 }
@@ -289,7 +293,7 @@ header .quick-links a i{
 }
 
 #code-samples .sample code .highlight{
-	color: #0FBBEC;
+	//color: #0FBBEC;
 }
 
 #code-samples .sample.right code{
@@ -298,7 +302,6 @@ header .quick-links a i{
 }
 
 #code-samples .sample code, .sample code *{
-	color: #333;
 	font-size: 12px;
 	line-height: 20px;
 	font-family: 'courier new', monospace;
@@ -309,7 +312,7 @@ header .quick-links a i{
 }
 
 #code-samples .sample code i.string{
-	color: #999;
+	color: #ddd;
 }
 
 /* structure */
@@ -367,13 +370,15 @@ header .quick-links a i{
 * Getting started
 **************************/
 #getting-started{
-	background: url("../img/nightsky.png" );
-	height: 400px;
+	//background: url("../img/nightsky.png" );
+	background: #fff;
 	position: relative;
+	overflow: hidden;
+	padding-bottom: 80px;
 }
 
 #getting-started *{
-	color: #eee;
+	color: #333;
 }
 
 #getting-started h2{
@@ -382,20 +387,78 @@ header .quick-links a i{
 	text-align: center;
 }
 
-#getting-started .box{
-	padding: 10px;
-	border: 1px solid rgba(255,255,255,0.6);
-	position: relative;
+#getting-started h4{
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 
-#getting-started .box.half{
-	width: 46%;
-	margin: 2%;
+#getting-started .main{
+	overflow: hidden;
 }
 
-#getting-started .box .icon{
-	height: 100%;
+#getting-started .main a{
+	width: 50%;
 	float: left;
-	width: 20%;
-	font-size: 30px;
+	text-align: center;
+	display: block;
+	box-sizing: border-box;
+	position: relative;
+	padding: 20px 0;
+	display: block;
+	cursor: pointer;
+	background-color: #fff;
+	transition: all 400ms ease;
+}
+
+#getting-started .main a:hover{
+	background-color: #eee;
+}
+
+#getting-started .main a .seperator{
+	position: absolute;
+	width: 1px;
+	height: 80%;
+	right: 0;
+	background-color: #ddd;
+	top: 10%;
+}
+
+#getting-started .main a .icon{
+	font-size: 100px;
+	color: #0FBBEC;
+}
+
+#getting-started .main a p{
+	font-weight: 300;
+}
+
+#learn-about{
+	background-image: url(../img/bg-learn.png);
+	overflow: hidden;
+}
+
+#learn-about h3{
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+	margin: 80px 0 40px;
+}
+
+#learn-about .grid{
+	overflow: hidden;
+	margin-bottom: 80px;
+}
+
+#learn-about .grid a{
+	display: block;
+	float: left;
+	width: 399px;
+	text-align: center;
+	text-transform: lowercase;
+	padding: 40px 0;
+	margin: 0 1px 1px 0;
+	color: #fff;
+	background-color: rgba( 255,255,255,0.2 );
+	box-sizing: border-box;
+	font-weight: 300;
 }
