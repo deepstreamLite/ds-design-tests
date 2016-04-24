@@ -179,10 +179,10 @@ header .quick-links a i{
 * Concept Select
 **************************/
 #concepts{
-	// background-color: #fff;
+	 background-color: #fff;
 
 	//background: #22C9F1 url(https://deepstream.io/assets/images/decrtn-SecrPath.svg) no-repeat bottom right;
-	background-color: #333;
+	//background-color: #333;
     height: 600px;
     border-top: 1px solid #ddd;
     box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
@@ -191,9 +191,9 @@ header .quick-links a i{
 }
 
 #concept-select{
-	background-color: #222;
-	// background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_dots.png");
-	//border-bottom: 1px solid #eee;
+	//background-color: #222;
+	background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_dots.png");
+	border-bottom: 1px solid #eee;
 }
 
 #concept-select ul{
@@ -223,18 +223,18 @@ header .quick-links a i{
 }
 
 #concept-select li.active{
-	// background-color: #fff;
-	background: #333;
+	background-color: #fff;
+	//background: #333;
 	padding: 40px 48px;
-	// border-bottom: 1px solid #fff;
-	// border-left: 1px solid #eee;
-	// border-right: 1px solid #eee;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
 }
 
 #concept-select li .icon{
 	float: left;
     font-size: 20px;
-    color: #eee;
+    color: #333;
     position: relative;
     left: 20px;
 }
@@ -247,7 +247,7 @@ header .quick-links a i{
 #concept-select li h2{
     font-size: 18px;
     margin-bottom: 8px;
-    color: #eee;
+    color: #333;
     margin-left: 50px;
     font-weight: 300;
 }
@@ -255,7 +255,7 @@ header .quick-links a i{
 #concept-select li p{
 	font-weight: 300;
 	font-size: 14px;
-	color: #eee;
+	color: #333;
 	margin-left: 50px;
 }
 
@@ -298,7 +298,7 @@ header .quick-links a i{
 }
 
 #code-samples .sample code, .sample code *{
-	color: #eee;
+	color: #333;
 	font-size: 12px;
 	line-height: 20px;
 	font-family: 'courier new', monospace;
