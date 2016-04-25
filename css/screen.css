@@ -108,10 +108,38 @@ nav a:hover{
 }
 
 nav a.active{
-	border-top: 5px solid #0FBBEC;
-	padding-top: 25px;
+	border-bottom: 2px solid #0FBBEC;
+	padding-bottom: 5px;
 	color: #0FBBEC;
 }
+
+
+nav .quick-links{
+	position: absolute;
+	right: 30px;
+}
+
+nav .quick-links a{
+	display: inline-block;
+	margin-left: 30px;
+	padding-top: 8px;
+	color: #aaa;
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 300;
+}
+
+nav .quick-links a:hover{
+	text-decoration: underline;
+}
+
+nav .quick-links a i{
+	color: #ccc;
+	margin-left: 2px;
+	position: relative;
+	top: 1px;
+}
+
 
 /**************************
 * Header
@@ -174,32 +202,6 @@ header .headline a:hover{
 header .headline a:active{
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
 }
-
-header .quick-links{
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: rgba(255,255,255,0.7);
-}
-
-header .quick-links a{
-	display: inline-block;
-	padding: 5px 50px;
-	color: #999;
-	cursor: pointer;
-	font-size: 12px;
-}
-
-header .quick-links a:hover{
-	text-decoration: underline;
-}
-
-header .quick-links a i{
-	color: #aaa;
-	position: relative;
-	top: 1px;
-}
-
 
 /**************************
 * Color Scheme
@@ -410,7 +412,7 @@ header .quick-links a i{
 }
 
 #getting-started h4{
-	font-size: 18px;
+	font-size: 24px;
 	margin-bottom: 10px;
 }
 
@@ -454,8 +456,12 @@ header .quick-links a i{
 	font-weight: 300;
 }
 
+/**************************
+* Learn about
+**************************/
 #learn-about{
 	background-image: url(../img/bg-learn.png);
+	background-image: linear-gradient( 45deg, #0FBBEC, #46D3FA );
 	overflow: hidden;
 }
 
@@ -480,7 +486,12 @@ header .quick-links a i{
 	padding: 40px 0;
 	margin: 0 1px 1px 0;
 	color: #fff;
-	background-color: rgba( 255,255,255,0.2 );
+	background-color: rgba( 0,0,0,0.05 );
 	box-sizing: border-box;
 	font-weight: 300;
+	transition: all 400ms ease;
+}
+
+#learn-about .grid a:hover{
+	background-color: rgba( 0,0,0,0.2 );
 }
