@@ -10,6 +10,11 @@
 	list-style-type: none;
 }
 
+html,
+body{
+	height: 100%;
+}
+
 a{
 	text-decoration: none;
 }
@@ -32,6 +37,16 @@ a{
 
 section{
 	position: relative;
+}
+
+#loading-cover{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: 2;
 }
 /**************************
 * Navigation
@@ -64,9 +79,9 @@ nav .logo span em{
 
 nav .logo .container{
     display: inline-block;
-    width: 36px;
-    height: 36px;
-    margin: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 15px 0;
     vertical-align: middle;
 }
 
@@ -75,7 +90,7 @@ nav .pages{
 }
 
 nav .pages a{
-	padding: 16px 0 15px;
+	padding: 30px 0 15px;
 	margin: 0 30px;
 	text-align: center;
 	font-family: Roboto, sans-serif;
@@ -93,8 +108,8 @@ nav a:hover{
 }
 
 nav a.active{
-	border-top: 4px solid #0FBBEC;
-	padding-top: 12px;
+	border-top: 5px solid #0FBBEC;
+	padding-top: 25px;
 	color: #0FBBEC;
 }
 
@@ -103,32 +118,36 @@ nav a.active{
 **************************/
 header{
     text-align: center;
-    padding-top: 50px;
+    position: relative;
 }
 
 header .video{
 	background-image: url(../img/video-placeholder.png);
 	width: 1200px;
 	height: 521px;
-	position: fixed;
+	position: absolute;
 	z-index: 0;
+	bottom: 0;
 	left: 50%;
 	margin-left: -600px;
 	opacity: 0.7;
 }
 
-header .headline,
-header .quick-links{
-	position: relative;
-	z-index: 1;
+header .headline{
+	height: 180px;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -90px;
 }
 
-header .headline{
-	padding: 140px 0;
+header .headline h1,
+header .headline h2{
+	position: relative;
+	z-index: 3;
 }
 
 header .headline h1{
-    padding-top: 50px;
     font-size: 50px;
 }
 
@@ -157,6 +176,9 @@ header .headline a:active{
 }
 
 header .quick-links{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	background: rgba(255,255,255,0.7);
 }
 
