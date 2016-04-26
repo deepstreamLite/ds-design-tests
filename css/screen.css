@@ -39,6 +39,17 @@ section{
 	position: relative;
 }
 
+.two-col{
+	overflow: hidden;
+	position: relative;
+}
+
+.two-col .left,
+.two-col .right{
+	float: left;
+	width: 50%;
+}
+
 #loading-cover{
 	position: fixed;
 	left: 0;
@@ -48,6 +59,34 @@ section{
 	background-color: #fff;
 	z-index: 2;
 }
+
+h3.icon-divider{
+	margin-bottom: 20px;
+}
+
+h3.icon-divider span.icon{
+	display: inline-block;
+	color: #999;
+	position: relative;
+	top: 4px;
+	font-size: 25px;
+	padding: 0 1px;
+}
+
+h3.icon-divider span.divider{
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    margin: 3px 6px;
+    background-color: #0FBBEC;
+    vertical-align: middle;
+}
+
+h3.icon-divider span.text{
+	font-size: 20px;
+}
+
+
 /**************************
 * Navigation
 **************************/
@@ -494,4 +533,98 @@ header .headline a:active{
 
 #learn-about .grid a:hover{
 	background-color: rgba( 0,0,0,0.2 );
+}
+
+/**************************
+* Community
+**************************/
+#community{
+	padding-bottom: 40px;
+}
+
+#community .two-col > div{
+	box-sizing: border-box;
+	padding: 0 8%;
+}
+#community .pictures{
+	overflow: hidden;
+}
+
+#community .pictures img{
+	width: 33.3333%;
+	box-sizing: border-box;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	float: left;
+	// opacity: 0.2;
+}
+
+#community h2{
+	color: #0FBBEC;
+	font-size: 40px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#community .events a{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding: 5px 0;
+}
+
+#community .events a img{
+	width: 24%;
+	display: block;
+	float: left;
+}
+
+#community .events a .event-details{
+	width: 76%;
+	padding-left: 10px;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+}
+
+#community .events a .event-details *{
+	font-weight: 300;
+	display: block;
+	color: #333;
+}
+
+
+#community .events a .event-details time,
+#community .events a .event-details address{
+	font-size: 12px;
+	display: inline-block;
+	font-style: normal;
+	color: #666;
+}
+
+#community .events a .event-details summary{
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+#community .pagination{
+    text-align: center;
+    margin: 5px 0 10px;
+}
+
+#community .pagination li{
+    display: inline-block;
+    padding: 3px 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+#community .pagination li:hover{
+	color: #0FBBEC;
+}
+
+#community .pagination li.active{
+	color: #0FBBEC;
+	text-decoration: underline;
 }
