@@ -1,6 +1,3 @@
-/**************************
-* Generell
-**************************/
 * {
   font-family: Roboto, sans-serif;
   font-weight: 200;
@@ -72,12 +69,8 @@ h3.icon-divider span.divider {
 h3.icon-divider span.text {
   font-size: 20px;
 }
-/**************************
-* Navigation
-**************************/
 nav {
   overflow: hidden;
-  background: #333;
   background: #fff;
 }
 nav .logo {
@@ -119,10 +112,10 @@ nav .pages a {
   font-weight: 300;
   transition: color 300ms ease;
 }
-nav a:hover {
+nav .pages a:hover {
   color: #0FBBEC;
 }
-nav a.active {
+nav .pages a.active {
   border-bottom: 2px solid #0FBBEC;
   padding-bottom: 5px;
   color: #0FBBEC;
@@ -149,9 +142,6 @@ nav .quick-links a i {
   position: relative;
   top: 1px;
 }
-/**************************
-* Header
-**************************/
 header {
   text-align: center;
   position: relative;
@@ -203,32 +193,16 @@ header .headline a:active {
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
 }
 /**************************
-* Color Scheme
-**************************/
-#concept-select li.active,
-#concept-select li:hover,
-#concepts,
-#logoD {
-  background-color: #0FBBEC;
-  fill: #0FBBEC;
-}
-#concept-select {
-  background-color: #46D3FA;
-}
-#concept-select li h2,
-#concept-select li p,
-#concept-select li .icon,
-#code-samples .sample code,
-#code-samples .sample code * {
-  color: #fff;
-}
-/**************************
 * Concept Select
 **************************/
 #concepts {
+  background-color: #0FBBEC;
   height: 600px;
   position: relative;
   z-index: 1;
+}
+#concept-select {
+  background-color: #46D3FA;
 }
 #concept-select ul {
   overflow: hidden;
@@ -244,6 +218,10 @@ header .headline a:active {
 #concept-select li,
 #concept-select li * {
   transition: all 500ms ease;
+}
+#concept-select li:hover,
+#concept-select li.active {
+  background-color: #0FBBEC;
 }
 #concept-select li:hover * {
   color: #fff;
@@ -269,11 +247,16 @@ header .headline a:active {
   font-size: 14px;
   margin-left: 50px;
 }
+#logoD {
+  fill: #0FBBEC;
+}
 /**************************
 * Code Samples
 **************************/
 #code-samples {
   position: relative;
+  /* structure */
+  /* logo */
 }
 #code-samples .sample {
   position: absolute;
@@ -298,7 +281,7 @@ header .headline a:active {
   left: 25px;
 }
 #code-samples .sample code,
-.sample code * {
+#code-samples .sample code * {
   font-size: 12px;
   line-height: 20px;
   font-family: 'courier new', monospace;
@@ -309,7 +292,6 @@ header .headline a:active {
 #code-samples .sample code i.string {
   color: #ddd;
 }
-/* structure */
 #code-samples .sample.left {
   left: 0;
 }
@@ -322,7 +304,6 @@ header .headline a:active {
 #code-samples .sample.bottom {
   top: 280px;
 }
-/* logo */
 @keyframes changeColor {
   from {
     stroke: #61d9fb;
@@ -352,9 +333,6 @@ header .headline a:active {
   width: 500px;
   height: 300px;
 }
-/**************************
-* Getting started
-**************************/
 #getting-started {
   background: #fff;
   position: relative;
@@ -406,9 +384,6 @@ header .headline a:active {
 #getting-started .main a p {
   font-weight: 300;
 }
-/**************************
-* Learn about
-**************************/
 #learn-about {
   background-image: url(../img/bg-learn.png);
   background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
@@ -441,159 +416,6 @@ header .headline a:active {
 #learn-about .grid a:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-/**************************
-* Community
-**************************/
-<<<<<<< Updated upstream
-#community{
-	padding-bottom: 40px;
-}
-
-#community .two-col > div{
-	box-sizing: border-box;
-	padding: 0 8%;
-}
-#community .pictures{
-	overflow: hidden;
-}
-
-#community .pictures img{
-	width: 109px;
-    height: 76px;
-	box-sizing: border-box;
-	border-right: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	float: left;
-	// opacity: 0.2;
-}
-
-#community h2{
-	color: #0FBBEC;
-	font-size: 40px;
-    padding: 40px 0;
-    text-align: center;
-}
-
-#community .events a{
-	display: block;
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 10px;
-}
-
-#community .events a img{
-	width: 24%;
-	display: block;
-	float: left;
-}
-
-#community .events a .event-details{
-	width: 76%;
-	padding-left: 10px;
-	box-sizing: border-box;
-	display: block;
-	float: left;
-}
-
-#community .events a .event-details *{
-	font-weight: 300;
-	display: block;
-	color: #333;
-}
-
-
-#community .events a .event-details time,
-#community .events a .event-details address{
-	font-size: 12px;
-	display: inline-block;
-	font-style: normal;
-	color: #666;
-}
-
-#community .events a .event-details summary{
-	font-size: 14px;
-	margin: 10px 0;
-}
-
-#community .pagination{
-    text-align: center;
-    margin: 5px 0 50px;
-}
-
-#community .pagination li{
-    display: inline-block;
-    padding: 3px 7px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 300;
-}
-
-#community .pagination li:hover{
-	color: #0FBBEC;
-}
-
-#community .pagination li.active{
-	color: #0FBBEC;
-	text-decoration: underline;
-}
-
-#community .git-text{
-	margin: 17px 0 46px;
-    font-size: 14px;
-    font-weight: 300;
-    width: 50%;
-    display: inline-block;
-}
-
-#community .git-text a{
-	color: #0FBBEC;
-	font-size: 500;
-}
-
-#community .git-btn{
-	display: inline-block;
-	width: 30%;
-}
-
-#community .links{
-	overflow: hidden;
-}
-
-#community .links a{
-	display: block;
-	width: 50%;
-	padding: 10px 0;
-	box-sizing: border-box;
-	float: left;
-	font-size: 14px;
-	font-weight: 300;
-	cursor: pointer;
-	transition: all 400ms ease;
-}
-
-#community .links a i{
-	position: relative;
-	top: 1px;
-}
-
-#community .links a:hover,
-#community .links a:hover i{
-	color: #0FBBEC;
-}
-
-#community .blogposts a{
-    font-size: 14px;
-    font-weight: 300;
-    display: block;
-    margin-bottom: 5px;
-}
-
-#community .blogposts i{
-	display: inline-block;
-	margin-right: 20px;
-	color: #999;
-}
-=======
 #community {
   padding-bottom: 40px;
 }
@@ -605,7 +427,8 @@ header .headline a:active {
   overflow: hidden;
 }
 #community .pictures img {
-  width: 33.3333%;
+  width: 109px;
+  height: 76px;
   box-sizing: border-box;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -621,7 +444,7 @@ header .headline a:active {
   display: block;
   position: relative;
   overflow: hidden;
-  padding: 5px 0;
+  padding-bottom: 10px;
 }
 #community .events a img {
   width: 24%;
@@ -653,7 +476,7 @@ header .headline a:active {
 }
 #community .pagination {
   text-align: center;
-  margin: 5px 0 10px;
+  margin: 5px 0 50px;
 }
 #community .pagination li {
   display: inline-block;
@@ -669,4 +492,61 @@ header .headline a:active {
   color: #0FBBEC;
   text-decoration: underline;
 }
->>>>>>> Stashed changes
+#community .git-text {
+  margin: 17px 0 46px;
+  font-size: 14px;
+  font-weight: 300;
+  width: 50%;
+  display: inline-block;
+}
+#community .git-text a {
+  color: #0FBBEC;
+  font-size: 500;
+}
+#community .git-btn {
+  display: inline-block;
+  width: 30%;
+}
+#community .links {
+  overflow: hidden;
+}
+#community .links a {
+  display: block;
+  width: 50%;
+  padding: 10px 0;
+  box-sizing: border-box;
+  float: left;
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+#community .links a i {
+  position: relative;
+  top: 1px;
+}
+#community .links a:hover,
+#community .links a:hover i {
+  color: #0FBBEC;
+}
+#community .blogposts a {
+  font-size: 14px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 5px;
+}
+#community .blogposts i {
+  display: inline-block;
+  margin-right: 20px;
+  color: #999;
+}
+/**************************
+* Color Scheme
+**************************/
+#concept-select li h2,
+#concept-select li p,
+#concept-select li .icon,
+#code-samples .sample code,
+#code-samples .sample code * {
+  color: #fff;
+}

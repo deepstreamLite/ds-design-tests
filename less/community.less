@@ -1,0 +1,149 @@
+#community{
+
+	padding-bottom: 40px;
+
+	.two-col > div{
+		box-sizing: border-box;
+		padding: 0 8%;
+	}
+	.pictures{
+		overflow: hidden;
+	}
+
+	.pictures img{
+		width: 109px;
+	    height: 76px;
+		box-sizing: border-box;
+		border-right: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+		float: left;
+		// opacity: 0.2;
+	}
+
+	h2{
+		color: @ds-color;
+		font-size: 40px;
+	    padding: 40px 0;
+	    text-align: center;
+	}
+
+	.events a{
+		display: block;
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 10px;
+	}
+
+	.events a img{
+		width: 24%;
+		display: block;
+		float: left;
+	}
+
+	.events a .event-details{
+		width: 76%;
+		padding-left: 10px;
+		box-sizing: border-box;
+		display: block;
+		float: left;
+	}
+
+	.events a .event-details *{
+		font-weight: 300;
+		display: block;
+		color: #333;
+	}
+
+
+	.events a .event-details time,
+	.events a .event-details address{
+		font-size: 12px;
+		display: inline-block;
+		font-style: normal;
+		color: #666;
+	}
+
+	.events a .event-details summary{
+		font-size: 14px;
+		margin: 10px 0;
+	}
+
+	.pagination{
+	    text-align: center;
+	    margin: 5px 0 50px;
+	}
+
+	.pagination li{
+	    display: inline-block;
+	    padding: 3px 7px;
+	    cursor: pointer;
+	    font-size: 12px;
+	    font-weight: 300;
+	}
+
+	.pagination li:hover{
+		color: @ds-color;
+	}
+
+	.pagination li.active{
+		color: @ds-color;
+		text-decoration: underline;
+	}
+
+	.git-text{
+		margin: 17px 0 46px;
+	    font-size: 14px;
+	    font-weight: 300;
+	    width: 50%;
+	    display: inline-block;
+	}
+
+	.git-text a{
+		color: @ds-color;
+		font-size: 500;
+	}
+
+	.git-btn{
+		display: inline-block;
+		width: 30%;
+	}
+
+	.links{
+		overflow: hidden;
+	}
+
+	.links a{
+		display: block;
+		width: 50%;
+		padding: 10px 0;
+		box-sizing: border-box;
+		float: left;
+		font-size: 14px;
+		font-weight: 300;
+		cursor: pointer;
+		transition: all 400ms ease;
+	}
+
+	.links a i{
+		position: relative;
+		top: 1px;
+	}
+
+	.links a:hover,
+	.links a:hover i{
+		color: @ds-color;
+	}
+
+	.blogposts a{
+	    font-size: 14px;
+	    font-weight: 300;
+	    display: block;
+	    margin-bottom: 5px;
+	}
+
+	.blogposts i{
+		display: inline-block;
+		margin-right: 20px;
+		color: #999;
+	}
+}

@@ -1,0 +1,172 @@
+/**************************
+* Concept Select
+**************************/
+#concepts{
+	background-color: @ds-color;
+	height: 600px;
+	position: relative;
+	z-index: 1;
+}
+
+#concept-select{
+	background-color: @ds-color-dark;
+
+	ul{
+		overflow: hidden;
+		position: relative;
+		margin-bottom: -1px;
+	}
+
+	li{
+		float: left;
+		width: 300px;
+		padding: 40px 50px;
+		cursor: pointer;
+	}
+
+	li,
+	li *{
+		transition: all 500ms ease;
+	}
+
+	li:hover,
+	li.active{
+		background-color: @ds-color;
+	}
+
+	li:hover *{
+		color: @font-color-light;
+	}
+
+	li .icon{
+		float: left;
+		font-size: 20px;
+		position: relative;
+		left: 20px;
+	}
+
+	li.active .icon,
+	li.active h2{
+		color: #fff;
+	}
+
+	li h2{
+		font-size: 18px;
+		margin-bottom: 8px;
+		margin-left: 50px;
+		font-weight: 300;
+	}
+
+	li p{
+		font-weight: 300;
+		font-size: 14px;
+		margin-left: 50px;
+	}
+}
+
+#logoD{
+	fill: @ds-color;
+}
+
+/**************************
+* Code Samples
+**************************/
+#code-samples{
+	position: relative;
+
+	.sample{
+		position: absolute;
+		overflow: hidden;
+	}
+
+	.sample > *{
+		display: block;
+		float: left;
+	}
+
+	.sample .icon{
+		font-size: 50px;
+		color: #fff;
+		width: 80px;
+		text-align: center;
+	}
+
+	.sample code{
+		white-space: pre-line;
+		width: 364px;
+	}
+
+	.sample code .highlight{
+		//color: @ds-color;
+	}
+
+	.sample.right code{
+		position: relative;
+		left: 25px;
+	}
+
+	.sample code, .sample code *{
+		font-size: 12px;
+		line-height: 20px;
+		font-family: 'courier new', monospace;
+	}
+
+	.sample code i{
+		font-style: normal;
+	}
+
+	.sample code i.string{
+		color: #ddd;
+	}
+
+	/* structure */
+	.sample.left{
+		left: 0;
+	}
+
+	.sample.right{
+		right: 0;
+	}
+
+	.sample.top{
+		top: 80px;
+	}
+
+	.sample.bottom{
+		top: 280px;
+	}
+
+	/* logo */
+	@keyframes changeColor {
+	  from {
+		stroke: #61d9fb;
+	  }
+
+	  to {
+	   stroke: #00C4FA;
+	  }
+	}
+
+	.ds-logo{
+		position: absolute;
+		width: 220px;
+		height: 220px;
+		top: 100px;
+		left: 50%;
+		margin-left: -110px;
+		animation-duration: 1s;
+		animation-name: changeColor;
+		animation-easing: ease;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+
+	.svg-canvas{
+		position: absolute;
+		left: 50%;
+		top: 62px;
+		margin-left: -250px;
+		width: 500px;
+		height: 300px;
+	}
+}

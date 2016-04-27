@@ -1,0 +1,85 @@
+nav{
+	overflow: hidden;
+	background: #fff;
+
+	.logo{
+		float: left;
+		display: block;
+
+		span{
+			color: #333;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 21px;
+			font-weight: 300;
+		}
+
+		span em{
+			color: @ds-color;
+			font-style: normal;
+			font-weight: 300;
+		}
+
+		.container{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			margin: 15px 0;
+			vertical-align: middle;
+		}
+	}
+
+	.pages{
+		float: right;
+
+		a{
+			padding: 30px 0 15px;
+			margin: 0 30px;
+			text-align: center;
+			font-family: Roboto, sans-serif;
+			font-size: 13px;
+			color: #333;
+			display: block;
+			float: left;
+			cursor: pointer;
+			font-weight: 300;
+			transition: color 300ms ease;
+		}
+
+		a:hover{
+			color: @ds-color;
+		}
+
+		a.active{
+			border-bottom: 2px solid @ds-color;
+			padding-bottom: 5px;
+			color: @ds-color;
+		}
+	}
+
+	.quick-links{
+		position: absolute;
+		right: 30px;
+	}
+
+	.quick-links a{
+		display: inline-block;
+		margin-left: 30px;
+		padding-top: 8px;
+		color: #aaa;
+		cursor: pointer;
+		font-size: 11px;
+		font-weight: 300;
+	}
+
+	.quick-links a:hover{
+		text-decoration: underline;
+	}
+
+	.quick-links a i{
+		color: #ccc;
+		margin-left: 2px;
+		position: relative;
+		top: 1px;
+	}
+}

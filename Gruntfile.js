@@ -40,6 +40,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-browser-sync');
 
 	grunt.registerTask( 'build', [ 'less:dev' ] );
-	grunt.registerTask( 'default', ['browserSync', 'watch' ] );
+	grunt.registerTask( 'default', [ 'build', 'browserSync', 'watch' ] );
 
 };
