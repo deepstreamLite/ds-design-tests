@@ -18,13 +18,10 @@
 	.grid a{
 		display: block;
 		float: left;
-		width: 399px;
-		text-align: center;
+		width: 25%;
 		text-transform: lowercase;
-		padding: 40px 0;
-		margin: 0 1px 1px 0;
-		color: #fff;
-		background-color: rgba( 0,0,0,0.05 );
+		padding: 30px 0 30px 20px;
+		color: #333;
 		box-sizing: border-box;
 		font-weight: 300;
 		transition: all 400ms ease;
@@ -32,5 +29,15 @@
 
 	.grid a:hover{
 		background-color: rgba( 0,0,0,0.2 );
+	}
+
+	.grid a *{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.grid a img{
+		width: 40px;
+		margin-right: 10px;
 	}
 }
