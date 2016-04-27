@@ -1,0 +1,11 @@
+{
+  "name": "deepstream.io-website",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-less": "latest"
+  }
+}
