@@ -13,6 +13,17 @@ body {
 a {
   text-decoration: none;
 }
+h2 {
+  font-size: 40px;
+  padding: 40px 0;
+  text-align: center;
+}
+.bright h2 {
+  color: #333;
+}
+.dark h2 {
+  color: #fff;
+}
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -143,26 +154,24 @@ nav .quick-links a i {
   top: 1px;
 }
 header {
-  text-align: center;
   position: relative;
 }
-header .video {
-  background-image: url(../img/video-placeholder.png);
-  width: 1200px;
-  height: 521px;
+header .wrapper {
+  height: 100%;
+}
+header video {
   position: absolute;
   z-index: 0;
   bottom: 0;
-  left: 50%;
-  margin-left: -600px;
-  opacity: 0.7;
+  right: 0;
+  width: 60%;
+  opacity: 0.5;
 }
 header .headline {
   height: 180px;
   position: absolute;
   top: 50%;
-  width: 100%;
-  margin-top: -90px;
+  margin-top: -100px;
 }
 header .headline h1,
 header .headline h2 {
@@ -178,19 +187,25 @@ header .headline span {
 header .headline a {
   display: inline-block;
   transition: all 300ms ease;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
-  padding: 9px 51px;
+  background: #3bcaf3;
+  color: #fff;
+  padding: 12px 60px;
+  font-size: 18px;
   text-align: center;
   border-radius: 3px;
   margin-top: 40px;
-  background-color: #fff;
+  font-weight: 300;
   cursor: pointer;
 }
+header .headline a i {
+  color: #fff;
+  padding-left: 2px;
+}
 header .headline a:hover {
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+  background: #0FBBEC;
 }
 header .headline a:active {
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+  background: #cbf1fc;
 }
 /**************************
 * Concept Select
@@ -218,6 +233,7 @@ header .headline a:active {
 #concept-select li,
 #concept-select li * {
   transition: all 500ms ease;
+  color: #fff;
 }
 #concept-select li:hover,
 #concept-select li.active {
@@ -233,10 +249,10 @@ header .headline a:active {
   left: 20px;
 }
 #concept-select li.active .icon,
-#concept-select li.active h2 {
+#concept-select li.active h3 {
   color: #fff;
 }
-#concept-select li h2 {
+#concept-select li h3 {
   font-size: 18px;
   margin-bottom: 8px;
   margin-left: 50px;
@@ -342,11 +358,6 @@ header .headline a:active {
 #getting-started * {
   color: #333;
 }
-#getting-started h2 {
-  font-size: 40px;
-  padding: 40px 0;
-  text-align: center;
-}
 #getting-started h4 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -385,8 +396,6 @@ header .headline a:active {
   font-weight: 300;
 }
 #learn-about {
-  background-image: url(../img/bg-learn.png);
-  background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
   overflow: hidden;
 }
 #learn-about h3 {
@@ -433,12 +442,6 @@ header .headline a:active {
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
   float: left;
-}
-#community h2 {
-  color: #0FBBEC;
-  font-size: 40px;
-  padding: 40px 0;
-  text-align: center;
 }
 #community .events a {
   display: block;
