@@ -400,13 +400,22 @@ header .headline a:active {
 }
 #learn-about h3 {
   text-align: center;
-  color: #fff;
-  font-size: 40px;
-  margin: 80px 0 40px;
+  color: #333;
+  font-size: 24px;
+  margin: 40px 0 10px;
+  position: relative;
+}
+#learn-about h3 .border {
+  height: 1px;
+  width: 60%;
+  margin: 6px 20% 0;
+  background-color: #0FBBEC;
 }
 #learn-about .grid {
   overflow: hidden;
   margin-bottom: 80px;
+  width: 1100px;
+  margin-left: 84px;
 }
 #learn-about .grid a {
   display: block;
@@ -432,6 +441,7 @@ header .headline a:active {
 }
 #community {
   padding-bottom: 40px;
+  background-color: #f6f6f6;
 }
 #community .two-col > div {
   box-sizing: border-box;
@@ -547,6 +557,10 @@ header .headline a:active {
   display: inline-block;
   margin-right: 20px;
   color: #999;
+}
+#internals {
+  background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
+  height: 400px;
 }
 /**************************
 * Color Scheme
