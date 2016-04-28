@@ -1,3 +1,57 @@
 #internals{
 	background-image: linear-gradient( 45deg, @ds-color, @ds-color-dark );
+	position: relative;
+	height: 500px;
+
+	.left{
+		background-image: linear-gradient( 45deg, @ds-color, @ds-color-dark );
+	}
+
+	.right{
+		overflow: hidden;
+	}
+
+	.extended{
+		width: 104%;
+		margin-left: -2%;
+		position: relative;
+	}
+
+	.left, .right, .two-col{
+		height: 100%;
+	}
+
+	.left, .right{
+		position: relative;
+	}
+
+	.divider{
+		position: absolute;
+		height: 100%;
+		right: 0;
+		opacity: 0.5;
+		width: 1px;
+		background: #fff;
+	}
+
+	#internals-svg{
+		position: relative;
+		width: 100%;
+	}
+
+	.labels{
+		position: absolute;
+		left: 50%;
+		top: 97px;
+		width: 100px;
+		margin-left: -50px;
+	}
+
+	.labels li{
+		color: #fff;
+		text-align: center;
+		font-size: 12px;
+		font-weight: 300;
+		margin-bottom: 15px;
+	}
 }

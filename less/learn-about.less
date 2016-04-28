@@ -38,12 +38,26 @@
 	}
 
 	.grid a:hover{
-		background-color: rgba( 0,0,0,0.2 );
+		background-color: @ds-color;
+		color: #fff;
+		font-weight: 500;
 	}
 
 	.grid a *{
 		display: inline-block;
 		vertical-align: middle;
+		transition: all 400ms ease;
+	}
+
+	.grid a:hover *{
+		color: #fff;
+	}
+
+	.grid a span.icon{
+		width: 40px;
+		height: 40px;
+		font-size: 36px;
+		text-align: center;
 	}
 
 	.grid a img{

@@ -429,11 +429,23 @@ header .headline a:active {
   transition: all 400ms ease;
 }
 #learn-about .grid a:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #0FBBEC;
+  color: #fff;
+  font-weight: 500;
 }
 #learn-about .grid a * {
   display: inline-block;
   vertical-align: middle;
+  transition: all 400ms ease;
+}
+#learn-about .grid a:hover * {
+  color: #fff;
+}
+#learn-about .grid a span.icon {
+  width: 40px;
+  height: 40px;
+  font-size: 36px;
+  text-align: center;
 }
 #learn-about .grid a img {
   width: 40px;
@@ -519,7 +531,7 @@ header .headline a:active {
 }
 #community .git-text a {
   color: #0FBBEC;
-  font-size: 500;
+  font-weight: 300;
 }
 #community .git-btn {
   display: inline-block;
@@ -560,7 +572,54 @@ header .headline a:active {
 }
 #internals {
   background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
-  height: 400px;
+  position: relative;
+  height: 500px;
+}
+#internals .left {
+  background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
+}
+#internals .right {
+  overflow: hidden;
+}
+#internals .extended {
+  width: 104%;
+  margin-left: -2%;
+  position: relative;
+}
+#internals .left,
+#internals .right,
+#internals .two-col {
+  height: 100%;
+}
+#internals .left,
+#internals .right {
+  position: relative;
+}
+#internals .divider {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  opacity: 0.5;
+  width: 1px;
+  background: #fff;
+}
+#internals #internals-svg {
+  position: relative;
+  width: 100%;
+}
+#internals .labels {
+  position: absolute;
+  left: 50%;
+  top: 97px;
+  width: 100px;
+  margin-left: -50px;
+}
+#internals .labels li {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 /**************************
 * Color Scheme
