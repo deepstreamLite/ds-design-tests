@@ -29,6 +29,9 @@ h2 {
   margin: 0 auto;
   position: relative;
 }
+.wrapper.small {
+  max-width: 926px;
+}
 .centered {
   text-align: center;
 }
@@ -573,7 +576,10 @@ header .headline a:active {
 #internals {
   background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
   position: relative;
-  height: 500px;
+  height: 416px;
+}
+#internals * {
+  color: #fff;
 }
 #internals .left {
   background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
@@ -586,6 +592,9 @@ header .headline a:active {
   margin-left: -2%;
   position: relative;
 }
+#internals .extended > * {
+  margin-top: -100px;
+}
 #internals .left,
 #internals .right,
 #internals .two-col {
@@ -595,6 +604,17 @@ header .headline a:active {
 #internals .right {
   position: relative;
 }
+#internals p {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 13% 20px;
+}
+#internals h3 {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 24px;
+}
 #internals .divider {
   position: absolute;
   height: 100%;
@@ -602,10 +622,12 @@ header .headline a:active {
   opacity: 0.5;
   width: 1px;
   background: #fff;
+  top: 0;
 }
 #internals #internals-svg {
   position: relative;
   width: 100%;
+  opacity: 0.7;
 }
 #internals .labels {
   position: absolute;
@@ -615,11 +637,92 @@ header .headline a:active {
   margin-left: -50px;
 }
 #internals .labels li {
-  color: #fff;
   text-align: center;
   font-size: 12px;
   font-weight: 300;
   margin-bottom: 15px;
+}
+#internals .or {
+  position: absolute;
+  background-color: red;
+  left: 50%;
+  z-index: 1;
+  height: 100%;
+}
+#internals .or > * {
+  position: absolute;
+}
+#internals .or .line {
+  height: 40%;
+  width: 1px;
+  background-color: #fff;
+  opacity: 0.6;
+}
+#internals .or .line.above {
+  top: 0;
+}
+#internals .or .line.below {
+  bottom: 0;
+}
+#internals .or .text {
+  top: 50%;
+  margin-top: -17px;
+  font-size: 28px;
+  width: 40px;
+  left: -20px;
+  text-align: center;
+  opacity: 0.8;
+}
+#internals .models {
+  margin-top: 10px;
+}
+#internals .two-methods {
+  overflow: hidden;
+  position: relative;
+  margin-top: 45px;
+}
+#internals .two-methods h4 {
+  font-size: 15px;
+}
+#internals .two-methods .method {
+  float: left;
+  width: 40%;
+  margin: 0 5%;
+  text-align: center;
+  box-sizing: border-box;
+}
+#internals .two-methods .icon {
+  font-size: 80px;
+  opacity: 0.7;
+}
+footer {
+  padding: 20px 0;
+}
+footer img {
+  width: 170px;
+  height: 170px;
+}
+footer .col {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+}
+footer a,
+footer li {
+  display: block;
+  padding: 5px 0;
+}
+footer * {
+  font-size: 12px;
+  font-weight: 300;
+  color: #aaa;
+}
+footer i {
+  display: inline-block;
+  width: 20px;
+}
+footer strong {
+  color: #777;
 }
 /**************************
 * Color Scheme

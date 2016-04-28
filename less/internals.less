@@ -1,7 +1,11 @@
 #internals{
 	background-image: linear-gradient( 45deg, @ds-color, @ds-color-dark );
 	position: relative;
-	height: 500px;
+	height: 416px;
+
+	*{
+		color: #fff;
+	}
 
 	.left{
 		background-image: linear-gradient( 45deg, @ds-color, @ds-color-dark );
@@ -15,6 +19,10 @@
 		width: 104%;
 		margin-left: -2%;
 		position: relative;
+
+		> *{
+			margin-top: -100px;
+		}
 	}
 
 	.left, .right, .two-col{
@@ -25,6 +33,19 @@
 		position: relative;
 	}
 
+	p{
+		font-size: 15px;
+		font-weight: 300;
+		text-align: center;
+		padding: 0 13% 20px;
+	}
+
+	h3{
+		padding: 20px 0;
+		text-align: center;
+		font-size: 24px;
+	}
+
 	.divider{
 		position: absolute;
 		height: 100%;
@@ -32,11 +53,13 @@
 		opacity: 0.5;
 		width: 1px;
 		background: #fff;
+		top: 0;
 	}
 
 	#internals-svg{
 		position: relative;
 		width: 100%;
+		opacity: 0.7;
 	}
 
 	.labels{
@@ -48,10 +71,73 @@
 	}
 
 	.labels li{
-		color: #fff;
 		text-align: center;
 		font-size: 12px;
 		font-weight: 300;
 		margin-bottom: 15px;
+	}
+
+
+	.or{
+		position: absolute;
+		background-color: red;
+		left: 50%;
+		z-index: 1;
+		height: 100%;
+
+		> *{
+			position: absolute;
+		}
+
+		.line{
+			height: 40%;
+			width: 1px;
+			background-color: #fff;
+			opacity: 0.6;
+		}
+
+		.line.above{
+			top: 0;
+		}
+
+		.line.below{
+			bottom: 0;
+		}
+
+		.text{
+			top: 50%;
+			margin-top: -17px;
+			font-size: 28px;
+			width: 40px;
+			left: -20px;
+			text-align: center;
+			opacity: 0.8;
+		}
+	}
+	.models{
+		margin-top: 10px;
+	}
+
+	.two-methods{
+		overflow: hidden;
+		position: relative;
+		margin-top: 45px;
+		
+		h4{
+			font-size: 15px;
+		}
+
+		.method{
+			float: left;
+			width: 40%;
+			margin: 0 5%;
+			text-align: center;
+			box-sizing: border-box;
+		}
+
+		.icon{
+			font-size: 80px;
+			opacity: 0.7;
+		}
 	}
 }
