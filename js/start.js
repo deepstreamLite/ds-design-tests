@@ -5,7 +5,7 @@ $(function() {
 		var conceptSelectHeight = $( '#concept-select' ).height();
 		// $( 'header' ).height( windowHeight - ( navHeight + conceptSelectHeight ) );
 				// $( 'header' ).height( windowHeight - ( navHeight + conceptSelectHeight ) );
-		 $( 'header' ).height( windowHeight - 241 );
+		 $( 'header' ).height( windowHeight - 162 );
 	}
 
 	applySizes();
@@ -15,32 +15,51 @@ $(function() {
 	});
 	$(window).resize( applySizes );
 	new CodeSampleAnimation();
-return;
 
+	var claims = [
+		'deepstream.io helps teams build collaboration apps',
+		'deepstream.io helps data-analysts create realtime dashboards',
+		'deepstream.io helps studios develop multiplayer games',
+		'deepstream.io helps traders receive low latency prices',
+		'deepstream.io helps iot companies aggregate sensor data',
+		'deepstream.io helps rangers track wildlife data',
+		'deepstream.io helps developers build messaging platforms'
+	];
+	var claimIndex = 0;
+	var claimElement = $('#claim');
+	setInterval(function(){
+		claimElement.fadeOut(500, function(){
+			claimIndex = claims[ claimIndex + 1 ] ? claimIndex + 1 : 0;
+			claimElement.text( claims[ claimIndex ] );
+			claimElement.fadeIn( 300 );
+		});
+	}, 6000 );
+return;
 	new DsLogo( 'nav .logo .container', {
-		radius: 18,
-		ballRadius: 1.7,
+		radius: 27,
+		ballRadius: 2,
 		angleOffset: 0.3,
-		cX: 25,
-		cY: 25,
+		cX: 30,
+		cY: 30,
 		attrD: {
 		//	stroke: 'rgba(255,255,255,0.8)',
 		//	fill: 'rgba(255,255,255,0.4)',
-			stroke: "#46D3FA",
-			fill: "#46D3FA",
+			stroke: "#83ddf7",
+			fill: "#83ddf7",
 			fillRule: 'evenodd',
-			strokeWidth: 1.2
+			strokeWidth: 3
 		},
 		attrS: {
 			stroke: '#0FBBEC',
 		//	fill: 'rgba(255,255,255,0.3)',
 			fill: '#0FBBEC',
 			fillRule: 'evenodd',
-			strokeWidth: 1.2,
+			strokeWidth: 3,
 			'stroke-alignment': 'inner'
 		}
 	});
 
+return;
 
 	var codeSampleLogo = new DsLogo( '#code-samples .ds-logo', {
 		radius: 96,

@@ -84,18 +84,22 @@ h3.icon-divider span.text {
   font-size: 20px;
 }
 nav {
-  overflow: hidden;
   background: #fff;
+  position: relative;
+  z-index: 3;
 }
 nav .logo {
   float: left;
   display: block;
+  position: absolute;
+  left: 0;
+  top: 14px;
 }
 nav .logo span {
   color: #333;
   display: inline-block;
   vertical-align: middle;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 300;
 }
 nav .logo span em {
@@ -105,13 +109,15 @@ nav .logo span em {
 }
 nav .logo .container {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 62px;
   margin: 15px 0;
   vertical-align: middle;
 }
 nav .pages {
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 25px;
 }
 nav .pages a {
   padding: 30px 0 15px;
@@ -136,25 +142,28 @@ nav .pages a.active {
 }
 nav .quick-links {
   position: absolute;
-  right: 30px;
+  right: 20px;
+  top: 10px;
 }
 nav .quick-links a {
   display: inline-block;
-  margin-left: 30px;
-  padding-top: 8px;
-  color: #aaa;
+  padding: 6px 10px;
   cursor: pointer;
-  font-size: 11px;
-  font-weight: 300;
-}
-nav .quick-links a:hover {
-  text-decoration: underline;
+  background-color: #fff;
 }
 nav .quick-links a i {
-  color: #ccc;
-  margin-left: 2px;
-  position: relative;
-  top: 1px;
+  color: #aaa;
+  font-size: 14px;
+}
+nav .quick-links a,
+nav .quick-links a i {
+  transition: all 400ms ease;
+}
+nav .quick-links a:hover {
+  background-color: #0FBBEC;
+}
+nav .quick-links a:hover i {
+  color: #fff;
 }
 header {
   position: relative;
@@ -214,13 +223,13 @@ header .headline a:active {
 * Concept Select
 **************************/
 #concepts {
-  background-color: #0FBBEC;
+  background-color: #46D3FA;
   height: 600px;
   position: relative;
   z-index: 1;
 }
 #concept-select {
-  background-color: #46D3FA;
+  background-color: #3bcaf3;
 }
 #concept-select ul {
   overflow: hidden;
@@ -240,7 +249,7 @@ header .headline a:active {
 }
 #concept-select li:hover,
 #concept-select li.active {
-  background-color: #0FBBEC;
+  background-color: #46D3FA;
 }
 #concept-select li:hover * {
   color: #fff;
@@ -267,7 +276,7 @@ header .headline a:active {
   margin-left: 50px;
 }
 #logoD {
-  fill: #0FBBEC;
+  fill: #46D3FA;
 }
 /**************************
 * Code Samples
@@ -546,7 +555,7 @@ header .headline a:active {
 #community .links a {
   display: block;
   width: 50%;
-  padding: 10px 0;
+  padding: 13px 0;
   box-sizing: border-box;
   float: left;
   font-size: 14px;
@@ -576,7 +585,7 @@ header .headline a:active {
 #internals {
   background-image: linear-gradient(45deg, #0FBBEC, #46D3FA);
   position: relative;
-  height: 416px;
+  height: 500px;
 }
 #internals * {
   color: #fff;
@@ -590,10 +599,8 @@ header .headline a:active {
 #internals .extended {
   width: 104%;
   margin-left: -2%;
+  height: 300px;
   position: relative;
-}
-#internals .extended > * {
-  margin-top: -100px;
 }
 #internals .left,
 #internals .right,
@@ -603,6 +610,7 @@ header .headline a:active {
 #internals .left,
 #internals .right {
   position: relative;
+  padding: 30px 0;
 }
 #internals p {
   font-size: 15px;
@@ -611,7 +619,7 @@ header .headline a:active {
   padding: 0 13% 20px;
 }
 #internals h3 {
-  padding: 20px 0;
+  padding: 20px 0 30px;
   text-align: center;
   font-size: 24px;
 }
@@ -625,9 +633,10 @@ header .headline a:active {
   top: 0;
 }
 #internals #internals-svg {
-  position: relative;
+  position: absolute;
   width: 100%;
   opacity: 0.7;
+  bottom: 0;
 }
 #internals .labels {
   position: absolute;
@@ -696,16 +705,27 @@ header .headline a:active {
   opacity: 0.7;
 }
 footer {
-  padding: 20px 0;
+  position: relative;
 }
 footer img {
   width: 170px;
   height: 170px;
+  position: relative;
+  top: 10px;
+}
+footer .cols {
+  overflow: hidden;
+  margin: 50px 0 30px;
 }
 footer .col {
-  width: 25%;
+  width: 20%;
+  margin-left: 5%;
   float: left;
   box-sizing: border-box;
+}
+footer h4 {
+  color: #666;
+  margin-bottom: 20px;
 }
 footer a,
 footer li {
@@ -721,8 +741,9 @@ footer i {
   display: inline-block;
   width: 20px;
 }
-footer strong {
-  color: #777;
+footer .copyright {
+  text-align: center;
+  margin-bottom: 30px;
 }
 /**************************
 * Color Scheme
