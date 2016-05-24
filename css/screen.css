@@ -100,12 +100,12 @@ nav .logo span {
   display: inline-block;
   vertical-align: middle;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
 }
 nav .logo span em {
   color: #0FBBEC;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
 }
 nav .logo .container {
   display: inline-block;
@@ -121,7 +121,7 @@ nav .pages {
 }
 nav .pages a {
   padding: 30px 0 15px;
-  margin: 0 30px;
+  margin-right: 20px;
   text-align: center;
   font-family: Roboto, sans-serif;
   font-size: 13px;
@@ -129,15 +129,19 @@ nav .pages a {
   display: block;
   float: left;
   cursor: pointer;
-  font-weight: 300;
   transition: color 300ms ease;
+}
+nav .pages a span {
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
 }
 nav .pages a:hover {
   color: #0FBBEC;
 }
 nav .pages a.active {
-  border-bottom: 2px solid #0FBBEC;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #0FBBEC;
+  padding-bottom: 3px;
   color: #0FBBEC;
 }
 nav .quick-links {
@@ -167,6 +171,20 @@ nav .quick-links a:hover i {
 }
 header {
   position: relative;
+  perspective: 600px;
+  perspective-origin: 50% 50%;
+  transition: perspective-origin 200ms ease;
+}
+header #header-overlay {
+  background-image: url(../img/bg-pattern-dots.png);
+  background-repeat: repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.4;
 }
 header .wrapper {
   height: 100%;
@@ -175,26 +193,37 @@ header video {
   position: absolute;
   z-index: 0;
   bottom: 0;
-  right: 0;
-  width: 60%;
-  opacity: 0.5;
+  transform: rotateY(-8deg);
+  right: 10%;
+  height: 100%;
 }
 header .headline {
   height: 180px;
   position: absolute;
   top: 50%;
-  margin-top: -100px;
+  margin-top: -200px;
 }
 header .headline h1,
 header .headline h2 {
   position: relative;
   z-index: 3;
 }
-header .headline h1 {
-  font-size: 50px;
+header .headline h1,
+header .headline h1 * {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 80px;
 }
-header .headline span {
+header .headline h1 {
+  width: 50%;
+}
+header .headline h1 span {
   color: #0FBBEC;
+}
+header .headline h1 em {
+  font-style: normal;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0 0.2em;
 }
 header .headline a {
   display: inline-block;
@@ -208,6 +237,8 @@ header .headline a {
   margin-top: 40px;
   font-weight: 300;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 header .headline a i {
   color: #fff;
@@ -218,6 +249,38 @@ header .headline a:hover {
 }
 header .headline a:active {
   background: #cbf1fc;
+}
+#usecases {
+  background-color: #46D3FA;
+  overflow: hidden;
+  position: relative;
+}
+#usecases li {
+  width: 16.6%;
+  height: 200px;
+  float: left;
+}
+#usecases li.img {
+  background-color: #fff;
+  overflow: hidden;
+}
+#usecases li.img img {
+  width: 100%;
+}
+#usecases li.text {
+  padding: 20px;
+  box-sizing: border-box;
+}
+#usecases li.text * {
+  color: #fff;
+  font-weight: 600;
+}
+#usecases li.text h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#usecases li.text p {
+  font-size: 14px;
 }
 /**************************
 * Concept Select

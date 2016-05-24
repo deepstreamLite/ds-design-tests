@@ -16,13 +16,13 @@ nav{
 			display: inline-block;
 			vertical-align: middle;
 			font-size: 24px;
-			font-weight: 300;
+			font-weight: 500;
 		}
 
 		span em{
 			color: @ds-color;
 			font-style: normal;
-			font-weight: 300;
+			font-weight: 500;
 		}
 
 		.container{
@@ -42,7 +42,7 @@ nav{
 
 		a{
 			padding: 30px 0 15px;
-			margin: 0 30px;
+			margin-right: 20px;
 			text-align: center;
 			font-family: Roboto, sans-serif;
 			font-size: 13px;
@@ -50,8 +50,14 @@ nav{
 			display: block;
 			float: left;
 			cursor: pointer;
-			font-weight: 300;
+			
 			transition: color 300ms ease;
+
+			span{
+				font-weight: 500;
+				background-color: @em-bg-color;
+				padding: 5px;
+			}
 		}
 
 		a:hover{
@@ -59,8 +65,8 @@ nav{
 		}
 
 		a.active{
-			border-bottom: 2px solid @ds-color;
-			padding-bottom: 5px;
+			border-bottom: 3px solid @ds-color;
+			padding-bottom: 3px;
 			color: @ds-color;
 		}
 	}

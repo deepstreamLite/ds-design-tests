@@ -1,4 +1,12 @@
 $(function() {
+	// var header = $( 'header' );
+	// header.mousemove(function(e){
+	// 	var x = 100 - ( e.offsetX / header.width() ) * 100;
+	// 	var y = 100 - ( e.offsetY / header.height() ) * 100;
+	// 	header.css( 'perspective-origin', x + '% ' + y + '%' );
+	// })
+
+
 	function applySizes() {
 		var windowHeight = $(window).height();
 		var navHeight = $( 'nav' ).height();
